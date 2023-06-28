@@ -1,3 +1,6 @@
 .App {
-   text-align: center;
+  position: static;
+
+  /* viewport-fit: contain; */
+  text-align: center;
 }
