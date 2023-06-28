@@ -1,5 +1,8 @@
 import style from "./SearchBar.module.css";
 import React from "react";
+import { Link, NavLink } from "react-router-dom";
+import Home from "../Home/Home";
+import About from "../About/About";
 
 export default function SearchBar({ onSearch, numRandom, clearAll }) {
   const [id, setId] = React.useState("");
@@ -25,6 +28,12 @@ export default function SearchBar({ onSearch, numRandom, clearAll }) {
   // console.log(onSearch);
   return (
     <div>
+      <NavLink to="/about" element={<About />} className={style.boton1}>
+        About
+      </NavLink>
+      <NavLink to="/home" element={<Home />} className={style.boton1}>
+        Home
+      </NavLink>
       <input
         placeholder="Buscador"
         className={style.input}

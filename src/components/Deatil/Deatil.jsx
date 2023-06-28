@@ -1,0 +1,80 @@
+import style from "./Deatil.module.css";
+import axios from "axios";
+import { useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
+
+const Deatil = () => {
+  let { id } = useParams();
+  console.log(id);
+
+  const [character, setCharacter] = useState({});
+
+  useEffect(() => {
+    axios(`https://rickandmortyapi.com/api/character/${id}`).then(
+      ({ data }) => {
+        if (data.name) {
+          setCharacter(data);
+        } else {
+          alert("No hay personajes con ese ID");
+        }
+      }
+    );
+    return setCharacter({});
+  }, [id]);
+
+  console.log(character.origin);
+
+  const imgagen_derecha = {
+    backgroundImage: `url(${character.image})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    width: "50%",
+  };
+  console.log(imgagen_derecha);
+
+  return (
+    <div className={style.pantallaDividida}>
+      <div className={style.izquierda}>
+        <h2 className={style.nombre}>{character.name && character.name}</h2>
+        <h2 className={style.h2}>
+          STATUS:
+          <span className={style.span}>
+            {character.status && character.status}
+          </span>
+        </h2>
+        {character.species ? (
+          <h2 className={style.h2}>
+            SPECIE:
+            <span className={style.span}>{character.species}</span>
+          </h2>
+        ) : (
+          ""
+        )}
+        {character.gender ? (
+          <h2 className={style.h2}>
+            GENDER:
+            <span className={style.span}>{character.gender}</span>
+          </h2>
+        ) : (
+          ""
+        )}
+        <h2 className={style.h2}>
+          ORIGIN:
+          <span className={style.span}>
+            {character.origin && character.origin.name}
+          </span>
+        </h2>
+      </div>
+      <div style={imgagen_derecha}>
+        {/* <img
+          src={character.image && character.image}
+          alt=""
+          className={style.image} 
+        /> */}
+      </div>
+    </div>
+  );
+};
+
+export default Deatil;

@@ -1,4 +1,6 @@
+import Deatil from "../Deatil/Deatil";
 import style from "./Card.module.css";
+import { Link } from "react-router-dom";
 
 export default function Card({
   id,
@@ -16,7 +18,9 @@ export default function Card({
       <button className={style.buttonClose} onClick={() => onClose(index)}>
         X
       </button>
-      <h2 className={style.titulo}>{name}</h2>
+      <Link to={`/detail/${id}`}>
+        <h2 className={style.titulo}>{name}</h2>
+      </Link>
       <h2 className={style.h2}>{status}</h2>
       <br />
       <h2 className={style.h2}>{species}</h2>

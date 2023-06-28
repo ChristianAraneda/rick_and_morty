@@ -1,0 +1,40 @@
+.izquierda {
+  background-color: rgba(181, 58, 205, 0.306);
+  /* background: transparent; */
+  height: 80vh;
+  width: 50%;
+
+  backdrop-filter: blur(20px);
+  /* justify-content: center; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center, top;
+}
+
+.derecha {
+}
+
+.pantallaDividida {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.nombre {
+  color: white;
+  font-size: 3rem;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.h2 {
+  text-align: left;
+  /* margin: 0; */
+  color: rgb(46, 30, 37);
+}
+
+.span {
+  color: rgb(255, 255, 255);
+  padding-left: 10px;
+}

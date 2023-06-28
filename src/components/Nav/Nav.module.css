@@ -8,3 +8,16 @@
   width: 100%;
   z-index: 9999;
 }
+
+.boton {
+  transition: box-shadow, color, 0.3s ease;
+  border: 0;
+  background: none;
+  box-shadow: none;
+  border-radius: 0;
+  border: 1px solid white;
+  padding: 1rem;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
