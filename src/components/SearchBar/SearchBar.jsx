@@ -4,7 +4,7 @@ import { Link, NavLink } from "react-router-dom";
 import Home from "../Home/Home";
 import About from "../About/About";
 
-export default function SearchBar({ onSearch, numRandom, clearAll }) {
+export default function SearchBar({ onSearch, numRandom, clearAll, logOut }) {
   const [id, setId] = React.useState("");
 
   const handleChange = (evento) => {
@@ -57,8 +57,11 @@ export default function SearchBar({ onSearch, numRandom, clearAll }) {
         }}>
         RANDOM
       </button>
-      <button className={style.boton3} onClick={() => clearAll()}>
+      <button name="clear" className={style.boton3} onClick={() => clearAll()}>
         CLEAR
+      </button>
+      <button className={style.logout} onClick={() => logOut()}>
+        LOG OUT
       </button>
     </div>
   );

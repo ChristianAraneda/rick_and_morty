@@ -4,7 +4,7 @@ import style from "./Nav.module.css";
 import { Link, NavLink } from "react-router-dom";
 import Home from "../Home/Home";
 
-export default function Nav({ onSearch, numRandom, clearAll }) {
+export default function Nav({ onSearch, numRandom, clearAll, logOut }) {
   // console.log(onSearch);
   return (
     <div className={style.menu}>
@@ -14,6 +14,7 @@ export default function Nav({ onSearch, numRandom, clearAll }) {
         onSearch={onSearch}
         numRandom={numRandom}
         clearAll={clearAll}
+        logOut={logOut}
       />
       <br />
     </div>

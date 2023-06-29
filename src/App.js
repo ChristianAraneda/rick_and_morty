@@ -1,15 +1,20 @@
 import axios from "axios";
-import { useState } from "react";
-import { Routes, Route } from "react-router-dom";
-import Cards from "./components/Cards/Cards";
+import { useState, useEffect } from "react";
+import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
+// import Cards from "./components/Cards/Cards";
 import Nav from "./components/Nav/Nav";
 import "./App.css";
 import About from "./components/About/About";
 import Home from "./components/Home/Home";
 import Deatil from "./components/Deatil/Deatil";
 import Error from "./components/Error/Error";
+import Form from "./components/Form/Form";
 
 function App() {
+  const navigate = useNavigate();
+  const location = useLocation();
+  console.log(location.pathname);
+
   const [characters, setCharacters] = useState([]);
 
   const onSearch = (id) => {
@@ -46,11 +51,46 @@ function App() {
 
   const clearAll = () => {
     setCharacters([]);
+    navigate("/home");
   };
+
+  // ******** 5.- SEGURIDAD *********
+
+  const [access, setAccess] = useState(false);
+
+  const EMAIL = "ignacio.aranedaocares@gmail.com";
+  const PASSWORD = "hola123";
+
+  const login = (userData) => {
+    if (userData.password === PASSWORD && userData.email === EMAIL) {
+      setAccess(true);
+      navigate("/home");
+    } else {
+      alert("Las credenciales NO SON VALIDAS FORRO!");
+    }
+  };
+
+  const logOut = () => {
+    setAccess(false);
+    navigate("/");
+  };
+
+  useEffect(() => {
+    !access && navigate("/");
+  }, [access]);
+
   return (
     <div className="App">
-      <Nav onSearch={onSearch} numRandom={numRandom} clearAll={clearAll} />
+      {location.pathname !== "/" ? (
+        <Nav
+          onSearch={onSearch}
+          numRandom={numRandom}
+          clearAll={clearAll}
+          logOut={logOut}
+        />
+      ) : null}
       <Routes>
+        <Route path="/" element={<Form login={login} />}></Route>
         <Route path="/about" element={<About />} />
         <Route
           path="/home"

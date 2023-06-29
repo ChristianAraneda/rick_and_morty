@@ -33,7 +33,7 @@
 .boton3 {
   transition: box-shadow, color, 0.3s ease;
   border: 0;
-  background: #ad0c0fc0;
+  background: #ad0c77da;
   box-shadow: none;
   justify-content: flex-end;
   border-radius: 0 1rem 1rem 0;
@@ -44,7 +44,7 @@
   cursor: pointer;
 }
 :hover.boton3 {
-  box-shadow: 0 0 30px rgba(90, 5, 5, 0.6);
+  box-shadow: 0 0 30px rgba(231, 232, 228, 0.6);
 }
 
 .boton1 {
@@ -73,4 +73,23 @@
   border-radius: 1rem 0 0 1rem;
   border: 1px solid white;
   padding: 1rem;
+}
+
+.logout {
+  transition: box-shadow, color, 0.3s ease;
+  border: 0;
+  background: #ad0c0fc0;
+  box-shadow: none;
+  border-radius: 1rem;
+  border: 1px solid white;
+  padding: 1rem;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  gap: 1rem;
+  text-decoration: none;
+  margin: 0 0.2rem;
+}
+:hover.logout {
+  box-shadow: 0 0 30px rgba(90, 5, 5, 0.6);
 }

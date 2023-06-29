@@ -1,0 +1,89 @@
+.warning {
+  border: solid rgba(255, 0, 0, 0.517) 3px;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: none;
+  border-radius: 1rem;
+  padding: 1rem;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+.danger {
+  font-size: 1rem !important;
+  color: rgb(251, 255, 0) !important;
+  background-color: rgba(0, 0, 0, 0);
+  margin-left: 0 !important;
+}
+
+.input {
+  border: 0;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: none;
+  border-radius: 1rem;
+  border: 1px solid white;
+  padding: 1rem;
+  font-size: 1rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.label {
+  font-size: 1.5rem;
+  color: white;
+  font-weight: bold;
+}
+
+.contForm {
+  display: inline-block;
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+  padding: 6.5rem 2rem 2rem 2rem;
+  border-radius: 1rem;
+  border: 4px solid rgba(255, 255, 255, 0.58);
+  position: relative;
+}
+
+.boton1 {
+  transition: box-shadow, color, 0.3s ease;
+  border: 0;
+  background: none;
+  box-shadow: none;
+  border-radius: 1rem;
+  border: 1px solid white;
+  padding: 1rem;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  gap: 1rem;
+  text-decoration: none;
+  margin: 0.5rem 0.2rem 0.2rem 0;
+  width: 60%;
+  font-size: 1rem;
+  font-weight: bold;
+}
+:hover.boton1 {
+  background-color: aliceblue;
+  width: 80%;
+  color: transparent;
+}
+
+.submit {
+  background-clip: text;
+
+  background-image: url(../../../public/fondo.jpg);
+}
+
+.imagen {
+  transition: box-shadow, 0.3s ease;
+  border-radius: 60%;
+  position: absolute;
+  width: 150px;
+  left: 27%;
+  top: -80px;
+  border: 4px solid rgba(255, 255, 255, 0.58);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.742);
+}
+
+:hover.image {
+  box-shadow: 0 0 30px rgba(231, 232, 228, 0.6);
+}
