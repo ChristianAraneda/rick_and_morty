@@ -4,3 +4,22 @@
   /* viewport-fit: contain; */
   text-align: center;
 }
+
+.astro {
+  width: 250px;
+  top: 50px;
+  position: absolute;
+  left: 30px;
+  animation: hola 6s ease-in-out infinite;
+}
+@keyframes hola {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}

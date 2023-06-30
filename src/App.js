@@ -9,6 +9,7 @@ import Home from "./components/Home/Home";
 import Deatil from "./components/Deatil/Deatil";
 import Error from "./components/Error/Error";
 import Form from "./components/Form/Form";
+import Astro from "./3800_2_06-removebg-preview.png";
 
 function App() {
   const navigate = useNavigate();
@@ -89,6 +90,7 @@ function App() {
           logOut={logOut}
         />
       ) : null}
+      <img className="astro" src={Astro} alt="" />
       <Routes>
         <Route path="/" element={<Form login={login} />}></Route>
         <Route path="/about" element={<About />} />
