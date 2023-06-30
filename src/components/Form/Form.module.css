@@ -25,6 +25,7 @@
   font-size: 1rem;
   margin-top: 1rem;
   text-align: center;
+  width: 90%;
 }
 
 .label {
@@ -41,6 +42,7 @@
   border-radius: 1rem;
   border: 4px solid rgba(255, 255, 255, 0.58);
   position: relative;
+  width: 400px;
 }
 
 .boton1 {
@@ -78,7 +80,7 @@
   border-radius: 60%;
   position: absolute;
   width: 150px;
-  left: 27%;
+  left: 33%;
   top: -80px;
   border: 4px solid rgba(255, 255, 255, 0.58);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.742);

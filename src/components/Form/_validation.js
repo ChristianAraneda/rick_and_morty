@@ -3,11 +3,12 @@ export function validation(inputs) {
 
   let errors = {};
 
-  if (!inputs.email) {
-    errors.email = "Se requiere un email obligatorio";
-  }
   if (!regexEmail.test(inputs.email)) {
-    errors.email = "Debe ser un correo electrónico valido";
+    errors.email = "El email ingresado no es valido mi rey/reina 👑";
+
+    if (!inputs.email) {
+      errors.email = "Debe ingresar un email";
+    }
   }
 
   if (inputs.email.length > 35) {
@@ -18,6 +19,9 @@ export function validation(inputs) {
   //   errors.password = "Necesitas al menos un numero";
   // }
 
+  if (!/.*\d+.*/.test(inputs.password)) {
+    errors.password = "La contraseña debe contener al menos un número";
+  }
   if (inputs.password.length > 10 || inputs.password.length < 6) {
     errors.password = "Debe tener una longitud entre 6 y 10 caracteres.";
   }

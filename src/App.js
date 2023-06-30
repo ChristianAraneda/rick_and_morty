@@ -58,7 +58,7 @@ function App() {
 
   const [access, setAccess] = useState(false);
 
-  const EMAIL = "ignacio.aranedaocares@gmail.com";
+  const EMAIL = "profe.hernan@soyhenry.com";
   const PASSWORD = "hola123";
 
   const login = (userData) => {
