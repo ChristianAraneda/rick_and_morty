@@ -1,15 +1,15 @@
+import Astronauta from "./3800_2_06-removebg-preview.png";
+import "./App.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 // import Cards from "./components/Cards/Cards";
 import Nav from "./components/Nav/Nav";
-import "./App.css";
 import About from "./components/About/About";
 import Home from "./components/Home/Home";
 import Deatil from "./components/Deatil/Deatil";
 import Error from "./components/Error/Error";
 import Form from "./components/Form/Form";
-import Astro from "./3800_2_06-removebg-preview.png";
 
 function App() {
   const navigate = useNavigate();
@@ -90,7 +90,7 @@ function App() {
           logOut={logOut}
         />
       ) : null}
-      <img className="astro" src={Astro} alt="" />
+      <img className="astro" src={Astronauta} alt="" />
       <Routes>
         <Route path="/" element={<Form login={login} />}></Route>
         <Route path="/about" element={<About />} />

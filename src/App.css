@@ -10,14 +10,20 @@
   top: 50px;
   position: absolute;
   left: 30px;
-  animation: hola 6s ease-in-out infinite;
+  pointer-events: none;
+  animation: float 5s ease-in-out infinite !important;
 }
-@keyframes hola {
+/* @media (prefers-reduced-motion: no-preference) {
+  .astro {
+    animation: float infinite 6s ease-in-out;
+  }
+} */
+@keyframes float {
   0% {
     transform: translateY(0px);
   }
   50% {
-    transform: translateY(-20);
+    transform: translateY(-50px);
   }
   100% {
     transform: translateY(0px);
