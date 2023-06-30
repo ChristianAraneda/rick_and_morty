@@ -93,6 +93,7 @@ function App() {
       ) : null}
       <img className="astro" src={Astronauta} alt="" />
       <img className="planeta" src={Planeta} alt="" />
+      <div className="objct8"></div>
       <Routes>
         <Route path="/" element={<Form login={login} />}></Route>
         <Route path="/about" element={<About />} />

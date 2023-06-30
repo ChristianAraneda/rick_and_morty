@@ -12,6 +12,7 @@ body {
   background-position: center;
   /* background-repeat: inherit; */
   background-attachment: fixed;
+  overflow: hidden;
 }
 
 code {

@@ -36,7 +36,7 @@
   position: absolute;
   right: -200px;
   pointer-events: none;
-  animation: rotate 50s linear infinite;
+  animation: rotate 100s linear infinite;
 }
 
 @keyframes rotate {
@@ -45,5 +45,55 @@
   }
   from {
     transform: rotate(-360deg);
+  }
+}
+
+.objct8 {
+  width: 200px;
+  height: 200px;
+  background: url(./planeta2.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: -400px;
+  bottom: 0px;
+  animation: animation2 100s infinite;
+}
+
+@keyframes animation2 {
+  0% {
+    left: -1000;
+    bottom: 0px;
+  }
+  25% {
+    left: 2000px;
+    bottom: 800px;
+    width: 60px;
+    transform: rotate3d(0, 0, 1, 45deg);
+  }
+  50% {
+    left: 4000px;
+    bottom: 900px;
+    width: 50px;
+    transform: rotate3d(0, 0, 1, -45deg);
+  }
+  75% {
+    left: 6000px;
+    bottom: 1000px;
+    width: 20px;
+    transform: rotate3d(0, 0, 1, -45deg);
+  }
+  90% {
+    left: 8000px;
+    bottom: 1800px;
+    width: 10px;
+    transform: rotate3d(0, 0, 1, -90deg);
+  }
+
+  100% {
+    left: 10000px;
+    bottom: 2000px;
+    width: 5px;
+    transform: rotate3d(0, 0, 1, -180deg);
   }
 }
