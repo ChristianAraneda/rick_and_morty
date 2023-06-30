@@ -12,10 +12,17 @@ body {
   background-position: center;
   /* background-repeat: inherit; */
   background-attachment: fixed;
-  overflow: hidden;
+  /* overflow: hidden; */
+  overflow-x: hidden;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+/* #content {
+  max-height: calc(100vh - 7rem);
+  overflow-y: auto;
+}
+ */
