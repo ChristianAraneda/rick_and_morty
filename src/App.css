@@ -29,3 +29,21 @@
     transform: translateY(0px);
   }
 }
+
+.planeta {
+  width: 600px;
+  bottom: -300px;
+  position: absolute;
+  right: -200px;
+  pointer-events: none;
+  animation: rotate 50s linear infinite;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+  from {
+    transform: rotate(-360deg);
+  }
+}

@@ -1,4 +1,5 @@
 import Astronauta from "./3800_2_06-removebg-preview.png";
+import Planeta from "./pngwing.com.png";
 import "./App.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
@@ -91,6 +92,7 @@ function App() {
         />
       ) : null}
       <img className="astro" src={Astronauta} alt="" />
+      <img className="planeta" src={Planeta} alt="" />
       <Routes>
         <Route path="/" element={<Form login={login} />}></Route>
         <Route path="/about" element={<About />} />
