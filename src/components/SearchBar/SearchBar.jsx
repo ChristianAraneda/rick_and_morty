@@ -3,6 +3,7 @@ import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import Home from "../Home/Home";
 import About from "../About/About";
+import Favorites from "../Favorites/Favorites";
 
 export default function SearchBar({ onSearch, numRandom, clearAll, logOut }) {
   const [id, setId] = React.useState("");
@@ -34,6 +35,10 @@ export default function SearchBar({ onSearch, numRandom, clearAll, logOut }) {
       <NavLink to="/home" element={<Home />} className={style.boton1}>
         Home
       </NavLink>
+      <NavLink to="/favorites" element={<Favorites />} className={style.boton1}>
+        Favoritos
+      </NavLink>
+
       <input
         placeholder="Buscador"
         className={style.input}

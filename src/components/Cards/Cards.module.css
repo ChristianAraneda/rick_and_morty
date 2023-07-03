@@ -1,3 +1,7 @@
+.contenedorPrincipal {
+  display: inline-block;
+}
+
 .contenedor {
   /* width: 9%; */
   display: flex;

@@ -1,8 +1,12 @@
 import Deatil from "../Deatil/Deatil";
 import style from "./Card.module.css";
 import { Link, NavLink } from "react-router-dom";
+import { connect } from "react-redux";
+import { addFav, removeFav } from "../../redux/action";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
-export default function Card({
+function Card({
   id,
   name,
   status,
@@ -12,10 +16,48 @@ export default function Card({
   image,
   onClose,
   index,
+  addFav,
+  removeFav,
+  props,
+  favoritos,
 }) {
+  const location = useLocation();
+  const [isFav, setIsFav] = useState(false);
+
+  const handleFavorite = () => {
+    if (isFav) {
+      setIsFav(false);
+      removeFav(id);
+    } else {
+      setIsFav(true);
+      addFav(props);
+    }
+  };
+
+  useEffect(() => {
+    favoritos.forEach((fav) => {
+      if (fav.id === props.id) {
+        setIsFav(true);
+      }
+    });
+  }, [favoritos]);
+  console.log(location.pathname);
   return (
     <div id={id} key={id} className={style.card}>
-      <button className={style.buttonClose} onClick={() => onClose(index)}>
+      {isFav ? (
+        <button onClick={handleFavorite}>❤️</button>
+      ) : (
+        <button onClick={handleFavorite}>🤍</button>
+      )}
+      <button
+        className={style.buttonClose}
+        onClick={
+          location.pathname === "/favorites"
+            ? () => handleFavorite()
+            : () => {
+                onClose(index);
+              }
+        }>
         X
       </button>
       <NavLink to={`/detail/${id}`} className={style.titulo}>
@@ -31,3 +73,18 @@ export default function Card({
     </div>
   );
 }
+
+export function mapStateToProps(state) {
+  return {
+    favoritos: state.myFavorites,
+  };
+}
+
+export function mapDispatchToProps(dispatch) {
+  return {
+    addFav: (personaje) => dispatch(addFav(personaje)),
+    removeFav: (id) => dispatch(removeFav(id)),
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Card);

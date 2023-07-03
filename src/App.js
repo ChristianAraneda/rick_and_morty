@@ -11,6 +11,7 @@ import Home from "./components/Home/Home";
 import Deatil from "./components/Deatil/Deatil";
 import Error from "./components/Error/Error";
 import Form from "./components/Form/Form";
+import Favortires from "./components/Favorites/Favorites";
 
 function App() {
   const navigate = useNavigate();
@@ -101,6 +102,7 @@ function App() {
           path="/home"
           element={<Home characters={characters} onClose={onClose} />}
         />
+        <Route path="/favorites" element={<Favortires onClose={onClose} />} />
         <Route path={`/detail/:id`} element={<Deatil />}></Route>
         <Route path="*" element={<Error />}></Route>
       </Routes>
