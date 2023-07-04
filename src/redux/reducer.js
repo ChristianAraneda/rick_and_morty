@@ -1,7 +1,9 @@
-import { ADD_FAV, REMOVE_FAV, FILTER, ORDER } from "./types";
+import { ADD_FAV, REMOVE_FAV, FILTER, ORDER, CLEAN_FAV } from "./types";
 const initialState = {
   myFavorites: [],
   allCharacters: [],
+  filter: "All",
+  order: "A",
 };
 
 const rootReducer = (state = initialState, { type, payload }) => {
@@ -21,6 +23,7 @@ const rootReducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         myFavorites: updatedList,
+        allCharacters: updatedList,
       };
 
     case FILTER:
@@ -32,20 +35,41 @@ const rootReducer = (state = initialState, { type, payload }) => {
       const generoFiltrado = state.allCharacters.filter(
         (personaje) => personaje.gender === payload
       );
+
       return {
         ...state,
+        filter: payload,
         myFavorites:
           payload === "All" ? [...state.allCharacters] : generoFiltrado,
       };
 
     case ORDER:
-      const allCharactersCopy = [...state.allCharacters];
-      return {
+      /* return {
         ...state,
+        order: payload,
         myFavorites:
           payload === "A"
-            ? allCharactersCopy.sort((a, b) => a.id - b.id)
-            : allCharactersCopy.sort((a, b) => b.id - a.id),
+            ? [...state.myFavorites.sort((a, b) => a.id - b.id)]
+            : [...state.myFavorites.sort((a, b) => b.id - a.id)],
+      }; */
+
+      const allCharactersCopy = [...state.myFavorites];
+      const sortedCharacters =
+        payload === "A"
+          ? allCharactersCopy.sort((a, b) => a.id - b.id)
+          : allCharactersCopy.sort((a, b) => b.id - a.id);
+
+      return {
+        ...state,
+        myFavorites: sortedCharacters,
+      };
+
+    case CLEAN_FAV:
+      return {
+        myFavorites: [],
+        allCharacters: [],
+        filter: "All",
+        order: "A",
       };
 
     default:

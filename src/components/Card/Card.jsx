@@ -3,7 +3,7 @@ import style from "./Card.module.css";
 import { Link, NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import { addFav, removeFav } from "../../redux/action";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 
 function Card({
@@ -41,14 +41,37 @@ function Card({
       }
     });
   }, [favoritos]);
+
+  let refHeart = useRef();
+  let refAnimationHeart = useRef();
+
+  const handleHeart = (event) => {
+    if (isFav) {
+      setIsFav(false);
+      removeFav(id);
+    } else {
+      setIsFav(true);
+      addFav(props);
+    }
+    refAnimationHeart.current.classList.toggle(style.animation);
+    refHeart.current.classList.toggle(style.fill_color);
+  };
+
   console.log(location.pathname);
   return (
     <div id={id} key={id} className={style.card}>
-      {isFav ? (
+      <div
+        className={`${style.heart} ${isFav ? style.fill_color : ""}`}
+        ref={refHeart}
+        onClick={handleHeart}>
+        <div className={style.animationheart} ref={refAnimationHeart}></div>
+      </div>
+
+      {/* {isFav ? (
         <button onClick={handleFavorite}>❤️</button>
       ) : (
         <button onClick={handleFavorite}>🤍</button>
-      )}
+      )} */}
       <button
         className={style.buttonClose}
         onClick={
@@ -61,7 +84,7 @@ function Card({
         X
       </button>
       <NavLink to={`/detail/${id}`} className={style.titulo}>
-        <h2>{name}</h2>
+        <h1 className={style.h1}>{name}</h1>
         <h2 className={style.h2}>{species}</h2>
         <img src={image} alt="" className={style.image} />
       </NavLink>

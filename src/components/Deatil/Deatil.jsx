@@ -1,9 +1,11 @@
 import style from "./Deatil.module.css";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 const Deatil = () => {
+  const navegate = useNavigate();
+
   let { id } = useParams();
   console.log(id);
 
@@ -30,6 +32,8 @@ const Deatil = () => {
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     width: "50%",
+    zIndex: 1,
+    position: "relative",
   };
   console.log(imgagen_derecha);
 
@@ -67,6 +71,10 @@ const Deatil = () => {
         </h2>
       </div>
       <div style={imgagen_derecha}>
+        <button className={style.buttonClose} onClick={() => navegate("/home")}>
+          X
+        </button>
+        ;
         {/* <img
           src={character.image && character.image}
           alt=""

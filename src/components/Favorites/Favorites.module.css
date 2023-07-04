@@ -1,0 +1,29 @@
+.contenedorPrincipal {
+  display: inline-block;
+}
+
+.contenedor {
+  /* width: 9%; */
+  display: flex;
+  /* flex-direction: row; */
+  justify-content: center;
+  padding: 1rem;
+  gap: 1rem;
+  /* margin: 1rem; */
+  flex-wrap: wrap;
+  scroll-behavior: smooth;
+}
+.contSelect {
+  margin-top: 2rem;
+  justify-content: center;
+  display: flex;
+  gap: 1rem;
+}
+select {
+  border: 0;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: none;
+  border-radius: 1rem;
+  border: 1px solid white;
+  padding: 1rem 2rem;
+}

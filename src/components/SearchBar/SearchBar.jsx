@@ -1,11 +1,16 @@
 import style from "./SearchBar.module.css";
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import Home from "../Home/Home";
 import About from "../About/About";
 import Favorites from "../Favorites/Favorites";
+import { useDispatch } from "react-redux";
+import { cleanFav } from "../../redux/action";
 
 export default function SearchBar({ onSearch, numRandom, clearAll, logOut }) {
+  const dispatch = useDispatch();
+  const location = useLocation();
+
   const [id, setId] = React.useState("");
 
   const handleChange = (evento) => {
@@ -62,7 +67,14 @@ export default function SearchBar({ onSearch, numRandom, clearAll, logOut }) {
         }}>
         RANDOM
       </button>
-      <button name="clear" className={style.boton3} onClick={() => clearAll()}>
+      <button
+        name="clear"
+        className={style.boton3}
+        onClick={
+          location.pathname === "/favorites"
+            ? () => dispatch(cleanFav())
+            : () => clearAll()
+        }>
         CLEAR
       </button>
       <button className={style.logout} onClick={() => logOut()}>

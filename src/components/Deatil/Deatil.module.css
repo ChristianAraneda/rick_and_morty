@@ -3,16 +3,12 @@
   /* background: transparent; */
   height: 80vh;
   width: 50%;
-
   backdrop-filter: blur(20px);
   /* justify-content: center; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center, top;
-}
-
-.derecha {
 }
 
 .pantallaDividida {
@@ -29,7 +25,7 @@
 }
 
 .h2 {
-  text-align: left;
+  /* text-align: left; */
   /* margin: 0; */
   color: rgb(46, 30, 37);
 }
@@ -37,4 +33,26 @@
 .span {
   color: rgb(255, 255, 255);
   padding-left: 10px;
+}
+
+.buttonClose {
+  transition: color, background, 0.2s ease;
+  display: inline-block;
+  justify-content: right;
+  color: crimson;
+  position: relative;
+  right: -40%;
+  top: 20px;
+  border: 1px solid tomato;
+  background: tomato;
+  border-radius: 1rem;
+  cursor: pointer;
+  z-index: 9999;
+  font-size: 2rem;
+  padding: 2%;
+}
+:hover.buttonClose {
+  /* box-shadow: 0 0 10px rgba(229, 4, 4, 0.4); */
+  background: tomato;
+  color: white;
 }
