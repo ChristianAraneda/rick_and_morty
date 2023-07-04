@@ -145,6 +145,7 @@
   transform: rotate(360deg);
   border-radius: 0 0 0 10px;
   cursor: pointer;
+  z-index: 2;
   visibility: hidden;
 }
 
