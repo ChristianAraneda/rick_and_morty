@@ -33,7 +33,7 @@ function App() {
         if (characterExists) {
           alert("¡Este personaje ya se encuentra en pantalla!");
         } else if (data.id) {
-          setCharacters((oldChars) => [...oldChars, data]);
+          setCharacters((oldChars) => [data, ...oldChars]);
         } else {
           alert("¡No hay personajes con este ID!");
         }
