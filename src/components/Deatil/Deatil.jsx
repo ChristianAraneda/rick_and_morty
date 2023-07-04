@@ -1,12 +1,13 @@
 import style from "./Deatil.module.css";
 import axios from "axios";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 const Deatil = () => {
+  const location = useLocation();
   const navegate = useNavigate();
-
   let { id } = useParams();
+
   console.log(id);
 
   const [character, setCharacter] = useState({});
@@ -71,7 +72,13 @@ const Deatil = () => {
         </h2>
       </div>
       <div style={imgagen_derecha}>
-        <button className={style.buttonClose} onClick={() => navegate("/home")}>
+        <button
+          className={style.buttonClose}
+          onClick={
+            location.pathname === "/favorites"
+              ? () => navegate("/favorites")
+              : () => navegate("/home")
+          }>
           X
         </button>
         ;
