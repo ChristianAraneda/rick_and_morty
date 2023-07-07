@@ -30,7 +30,8 @@ select {
 
 @media (max-width: 480px) {
   .contSelect {
-    margin-top: 40%;
+    margin-top: 30%;
     z-index: 1;
+    font-size: 2rem;
   }
 }
