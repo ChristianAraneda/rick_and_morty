@@ -43,6 +43,9 @@ export default function SearchBar({ onSearch, numRandom, clearAll, logOut }) {
       <NavLink to="/favorites" element={<Favorites />} className={style.boton1}>
         Favoritos
       </NavLink>
+      <button className={style.logout} onClick={() => logOut()}>
+        LOG OUT
+      </button>
 
       <input
         placeholder="Buscador"
@@ -76,9 +79,6 @@ export default function SearchBar({ onSearch, numRandom, clearAll, logOut }) {
             : () => clearAll()
         }>
         CLEAR
-      </button>
-      <button className={style.logout} onClick={() => logOut()}>
-        LOG OUT
       </button>
     </div>
   );

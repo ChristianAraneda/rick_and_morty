@@ -1,4 +1,4 @@
-.warning {
+/* .warning {
   border: solid rgba(255, 0, 0, 0.517) 3px;
   background: rgba(255, 255, 255, 0.8);
   box-shadow: none;
@@ -8,16 +8,108 @@
   margin-top: 1rem;
   text-align: center;
   width: 90%;
-}
+} */
+/* .warning {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  font-size: 0.8rem;
+  color: rgb(255, 3, 3);
+  font-weight: bold;
+  pointer-events: none;
+  transition: 0.5s;
+} */
 
 .danger {
-  font-size: 1rem !important;
+  font-size: 0.8rem !important;
   color: rgb(251, 255, 0) !important;
   background-color: rgba(0, 0, 0, 0);
-  margin-left: 0 !important;
+  /* margin-left: 0 !important; */
+  position: absolute;
+  top: 50px;
+  right: 2%;
+}
+.contForm {
+  display: inline-block;
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+  padding: 5rem 2rem 2rem 2rem;
+  border-radius: 1rem;
+  border: 4px solid rgba(255, 255, 255, 0.58);
+
+  width: 400px;
+  animation: fadeIn 0.5s ease-in-out forwards;
 }
 
-.input {
+.inputBox {
+  width: 87%;
+  margin: 30px;
+  border-bottom: 2px solid #fff;
+  /* background-color: red; */
+  display: flex;
+  position: relative;
+  /* margin: 30px 0; */
+  text-align: start;
+}
+.label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  pointer-events: none;
+  transition: 0.5s;
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.input1:focus ~ label,
+.input1:valid ~ label {
+  top: -10px;
+}
+
+.input1 {
+  font-size: 1rem;
+  color: rgb(255, 255, 255);
+  /* font-weight: bold; */
+  width: 90%;
+  height: 50px;
+  background: transparent;
+  /* background: rgba(255, 255, 255, 0.8); */
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+
+  /* border: 0; */
+  /* box-shadow: none;
+  border-radius: 1rem;
+  border: 1px solid white; */
+  /* padding: 1rem; */
+  /* margin-top: 1rem; */
+  /* text-align: center; */
+}
+
+.icon {
+  position: absolute;
+  right: 0px;
+  color: rgb(255, 255, 255);
+  font-size: 1.2em;
+  line-height: 57px;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* .input {
   border: 0;
   background: rgba(255, 255, 255, 0.8);
   box-shadow: none;
@@ -27,35 +119,18 @@
   font-size: 1rem;
   margin-top: 1rem;
   text-align: center;
-  width: 90%;
-}
-
-.label {
-  font-size: 1.5rem;
-  color: white;
-  font-weight: bold;
-}
-
-.contForm {
-  display: inline-block;
-  background-color: transparent;
-  backdrop-filter: blur(10px);
-  padding: 6.5rem 2rem 2rem 2rem;
-  border-radius: 1rem;
-  border: 4px solid rgba(255, 255, 255, 0.58);
-  position: relative;
-  width: 400px;
-}
+  width: 310px;
+} */
 
 .boton1 {
-  transition: box-shadow, color, 0.3s ease;
+  transition: box-shadow, display, color, 0.3s ease;
   border: 0;
   background: none;
   box-shadow: none;
   border-radius: 1rem;
   border: 1px solid white;
   padding: 1rem;
-  color: white;
+  color: rgb(249, 246, 246);
   font-weight: bold;
   cursor: pointer;
   gap: 1rem;
@@ -64,6 +139,12 @@
   width: 60%;
   font-size: 1rem;
   font-weight: bold;
+  display: none;
+  /* opacity: 0; */
+}
+.boton1:valid {
+  display: inline-block;
+  animation: fadeIn 0.5s ease-in-out forwards;
 }
 :hover.boton1 {
   background-color: aliceblue;
@@ -90,4 +171,12 @@
 
 :hover.image {
   box-shadow: 0 0 30px rgba(231, 232, 228, 0.6);
+}
+
+@media (max-width: 480px) {
+  .contForm {
+    background-color: transparent;
+
+    margin-top: 40%;
+  }
 }

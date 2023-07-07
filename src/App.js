@@ -69,7 +69,7 @@ function App() {
       setAccess(true);
       navigate("/home");
     } else {
-      alert("Las credenciales NO SON VALIDAS FORRO!");
+      alert("Las credenciales NO SON VALIDAS");
     }
   };
 

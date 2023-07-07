@@ -26,3 +26,9 @@ code {
   overflow-y: auto;
 }
  */
+
+@media (max-width: 480px) {
+  body {
+    overflow: hidden;
+  }
+}

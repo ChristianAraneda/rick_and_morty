@@ -93,3 +93,16 @@
 :hover.logout {
   box-shadow: 0 0 30px rgba(90, 5, 5, 0.6);
 }
+
+@media (max-width: 480px) {
+  .input {
+    border: 0;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: none;
+    border-radius: 1rem 0 0 1rem;
+    border: 1px solid white;
+    padding: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+}
