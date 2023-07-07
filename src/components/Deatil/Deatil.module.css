@@ -15,7 +15,6 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  margin-top: 4rem;
 }
 
 .nombre {
@@ -56,4 +55,10 @@
   /* box-shadow: 0 0 10px rgba(229, 4, 4, 0.4); */
   background: tomato;
   color: white;
+}
+
+@media (max-width: 480px) {
+  .pantallaDividida {
+    margin-top: 5rem;
+  }
 }
