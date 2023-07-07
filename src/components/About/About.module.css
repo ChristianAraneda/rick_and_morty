@@ -4,9 +4,15 @@
 
 .imgen {
   border-radius: 50%;
-  width: 60%;
+  width: 70%;
 }
 
 a {
   text-decoration: none;
+}
+
+@media (max-width: 480px) {
+  div {
+    margin-top: 5rem;
+  }
 }
